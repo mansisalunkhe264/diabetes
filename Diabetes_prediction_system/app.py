@@ -2,9 +2,8 @@ import streamlit as st
 import pickle as pkl
 
 # Load the trained model
-modelfile = open("C:\\Users\\LENOVO\\OneDrive\\Desktop\\Machine Learning\\Pickle\\model.pkl", "rb")
-model = pkl.load(modelfile)
-modelfile.close()
+with open("model.pkl", "rb") as modelfile:
+    model = pkl.load(modelfile)
 
 # Define the prediction function
 def predict_diabetes(glucose, bloodpressure):
